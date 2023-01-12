@@ -10,6 +10,10 @@ Dataset folder contains the covid related research paper dataset and directory i
 
 [Main Code Directory]<br>
 |<br>
+|-------- Assignment_folder<br>
+|<br>
+|-------- Misc<br>
+|<br>
 |-------- Data<br>
 | |<br>
 | |---------- CORD-19 (Ensure that inside this folder, there are all the json files)<br>
@@ -17,10 +21,7 @@ Dataset folder contains the covid related research paper dataset and directory i
 | |---------- queries.csv<br>
 | |<br>
 | |---------- id_mapping.csv<br>
-| |<br>
-| |---------- Assignment_folder<br>
-| |<br>
-| |---------- Misc<br>
+
 
 User needs to copy the desired code files to the main code directory, for example, user needs to build the IR system as given in Assignment_folder/Assignment1.pdf , then it needs to copy the files from Assignment_folder/Assignment1/* to main code directory and then run the desired script to generate the results in the same format as specified in the corresponding assignment pdf file. 
 
