@@ -27,7 +27,7 @@ Dataset folder contains the covid related research paper dataset and directory i
 
 User needs to copy the desired code files to the main code directory, for example, user needs to build the IR system as given in Assignment_folder/Assignment1.pdf , then it needs to copy the files from Assignment_folder/Assignment1/* to main code directory and then run the desired script to generate the results in the same format as specified in the corresponding assignment pdf file. 
 
-Since the dataset is large enough, it will take some time to run the script, in case, you cannot generate the TF-IDF file for Assignment 3, then you can download the same from <a href="">here</a>. 
+Since the dataset is large enough, it will take some time to run the script, in case, you cannot generate the TF file for Assignment 3, then you can download the same from <a href="https://drive.google.com/drive/folders/1NyvoE7i0VrNTGmHfUS2cQgBTlTsxAhmm?usp=sharing">here</a>. 
 
 # About Project
 This is the term project for the Information retrieval course-CS60092 at IIT Kharagpur.
