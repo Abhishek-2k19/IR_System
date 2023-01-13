@@ -1,0 +1,25 @@
+RF metrics:
+alpha,beta,gamma,mAP@20,NDCG@20
+1,1,0.5,0.030919606709080394,0.397076874319628
+0.5,0.5,0.5,0.03853865432812801,0.4255817576790276
+1,0.5,0,0.026850342639816324,0.3544882403108164
+
+PsRF metrics:
+alpha,beta,gamma,mAP@20,NDCG@20
+1,1,0.5,0.12328874547610728,0.3431083865408375
+0.5,0.5,0.5,0.12328874547610728,0.3431083865408375
+1,0.5,0,0.14956945498860952,0.3721507219275877
+
+metrics obtained on original query:
+MAP@10,MAP@20,NDCG@10,NDCG@20
+0.2858654572940287,0.2371900367598068,0.39761505190329893,0.3622644257819873
+
+From the above metrics, we found that MAP@20 values have gone down, while in NDCG, we found that in case of RF metrics with [alpha,beta,gamma] = [1,1,0.5], [0.5,0.5,0.5] and in PsRF with [alpha,beta,gamma] = [1,0.5,0], there is slight improvement in NDCG metrics, while in rest three cases, it got slightly decreased. Overall, we found that performance based on MAP has shown a decreasing trend with both in RF & PsRF while based on NDCG, performance is improved using RF, while it remained almost same with PsRF. To sum it up, feedback schemes should improve the evaluation metrics, while in our case, it has remained almost same or got worse with few design specs. Possible reason which I figured out:
+
+1. I tried printing the relevance corresponding to the top 20 retrieved documents for few queries, and I found that in most of the cases, those documents are NOT present in our qrels.csv, so by-default, we have been told to assume its relevance as 0, which seems to be creating the issue, as we are giving feedback that most top matched documents are completely irrelevant and accordingly we are modifying our query using rocchio. So this might be the root cause of poor performance metrics.   
+
+2. We have limited our vocabulary to 20,000 words as we have limited computational power available with us, so, in that case, there may be few words which are very much relevant to the provided queries and they might be present in the document, however, it may be the case, those words are out of our limited vocabulary of 20,000 words. So that's why we are getting poor performance in original query and in this case, rocchio wouldn't help much as we may not have those important terms in our vocabulary anyway.
+
+
+Conclusion:
+We have tried our best in coding the IR system with the given design specs, but, if we could work on above two possible areas and if could get some computation facility for running code on entire vocabulary along with ground truth relevance of each doc for each query, then, we are sure that results would be much better, than what we have got right now. 
